@@ -1,18 +1,21 @@
 <?php
 
-class Field
+abstract class Field
 {
-    private $name;
-    private $type;
+    protected $name;
+    protected $type;
+    protected $text;
+    protected $id;
+    protected $default;
 
-    public function __construct($name, $type)
+    public function __construct($name, $type, $text, $default = '')
     {
         $this->name = $name;
         $this->type = $type;
+        $this->text = $text;
+        $this->id = 'id_' . $name;
+        $this->default = $default;
     }
 
-    public function render()
-    {
-        echo "<p><label>$this->name<input type='$this->type' name='$this->name'></input></label></p>";
-    }
+    abstract public function render();
 }
