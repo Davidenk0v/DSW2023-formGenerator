@@ -5,6 +5,7 @@ require_once 'Document.php';
 require_once 'Field.php';
 require_once 'MultipleField.php';
 require_once 'SimpleField.php';
+require_once 'Paragraph.php';
 
 $form1 = new Form("Formulario", "validate.php", Method::GET);
 
@@ -28,7 +29,9 @@ $form1->add($simpleField4);
 $form1->add($multiple);
 $form1->add($multiple2);
 $multiple->addOption('Diseño de interfaces web', 'DOR');
+$parrafo = new Paragraph('Hola mundo');
 //Muestro el formulario
-$documet = new Document('Prueba documento');
-$documet->add($form1);
-$documet->render();
+$document = new Document('Prueba documento');
+$document->add($parrafo);
+$document->add($form1);
+$document->render();

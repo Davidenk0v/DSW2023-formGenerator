@@ -10,7 +10,7 @@ class Document
     }
 
 
-    public function add(Element $element)
+    public function add(Renderizable $element)
     {
         $this->elements[] = $element;
     }
