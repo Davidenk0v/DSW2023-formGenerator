@@ -1,11 +1,12 @@
 <?php
 require_once 'Field.php';
+require_once 'SimpleField.php';
 enum Method: string
 {
     case GET = "get";
     case POST = "post";
 }
-class Form
+class Form extends Element
 {
     //ATRIBUTOS
     private string $action;
